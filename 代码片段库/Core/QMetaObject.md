@@ -4,9 +4,9 @@
 复杂度层级： #Medium
 
 ---
-
+### 🏛 原典藏经阁
 Header：\<QMetaObject\>
-Doc：[QMetaObject](https://doc.qt.io/qt-6/qmetaobject.html)
+Doc：[QMetaObject Struct](https://doc.qt.io/qt-6/qmetaobject.html)
 Public Types：
 ```c++
 class Connection
@@ -52,13 +52,27 @@ bool inderits(const QMetaObject *metaObject) const
 ```
 Static Public Members：
 ```c++
+bool invokeMethod(
+	QObject *obj, const char *member,
+	[Qt::ConnectionType type],
+	[ReturnArg],
+	Args
+)
+bool invokeMethod(
+	QObject *context, Functor function,
+	[Qt::ConnectionType type],  //不能只有ConnectionType
+	[ReturnArg],
+	[Args]
+)
 
+QByteArray normalizedSignature(const char *method)
+QByteArray normalizedType(const char *type)
 ```
 （Link：[[QMetaClassInfo]]，[[QMetaMethod]]，[[QMetaProperty]]，[[QMetaEnum]]，[[QMetaType]]）
 
 
 ---
-
+### 🗡 兵械图谱室
 ```c++
 
 ```
@@ -70,11 +84,18 @@ Static Public Members：
 ```
 
 ---
-
+### 🧿 观星者回廊
 > [!QUESTION]
 哪些是实例化以后才能用的，哪些是不实例化也能用的？
 
 必须实例化的有：
 
 不实例化也行的：
+
+> [!TIP]
+参数name：只需要给方法名即可。(`"add"`)
+参数method：除了给类名，还需要给参数列表。(`"add(int, char, ...)"`)
+
+---
+### 🕯 传灯者密室
 
